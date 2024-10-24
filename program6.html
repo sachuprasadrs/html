@@ -76,11 +76,11 @@
                     <td><input type="text" id="replace_s"></td>
                 </tr>
                 <tr>
-                    <th>Mege element1</th>
+                    <th>Merge element1</th>
                     <td><input type="text" id="merge_1"></td>
                 </tr>
                 <tr>
-                    <th>Mege element2</th>
+                    <th>Merge element2</th>
                     <td><input type="text" id="merge_2"></td>
                 </tr>
             </tbody>
@@ -136,7 +136,14 @@
             list_items += li_O + 'Uppercase : ' + input.toUpperCase() + li_C;
             list_items += li_O + 'lowercase : ' + input.toLowerCase() + li_C;
             list_items += li_O + 'After Merging: '+input.concat(merge_1,merge_2)+ li_C;
-            list_items += li_O +'Repeat of'+merge_1+' is: '+merge_1.repeat(2)+ li_C;
+            list_items += li_O +'Repeat of '+merge_1+' is: '+merge_1.repeat(2)+ li_C;
+            list_items += li_O + 'Starts with ' + search + ' : ' + input.startsWith(search) + li_C;
+            list_items += li_O + 'Ends with ' + search + ' : ' + input.endsWith(search) + li_C;
+            list_items += li_O + 'Padding Start (10 chars): ' + input.padStart(10, '*') + li_C;
+            list_items += li_O + 'Padding End (10 chars): ' + input.padEnd(10, '*') + li_C;
+            list_items += li_O + 'Matching ' + search + ' : ' + input.match(search) + li_C;
+            list_items += li_O + 'Char Code at position 2: ' + input.charCodeAt(2) + li_C;
+            list_items += li_O + 'Char from code 97 (Unicode a): ' + String.fromCharCode(97) + li_C;
             
             document.getElementById('output').innerHTML = (list_items);
         }
@@ -157,11 +164,21 @@
             list_items += li_O + 'Floor value of ' + input + ' is : ' + Math.floor(input) + li_C;
             list_items += li_O + 'Sin value of ' + input + ' is : ' + Math.sin(input * Math.PI / 180) + li_C;
             list_items += li_O + 'Cos value of ' + input + ' is : ' + Math.cos(input * Math.PI / 180) + li_C;
+            list_items += li_O + 'Tan value of ' + input + ' is : ' + Math.tan(input * Math.PI / 180) + li_C;
             list_items += li_O + 'Minimum of (0, 150, 30, 20, -8, -200) is : ' + Math.min(0, 150, 30, 20, -8, -200) + li_C;
             list_items += li_O + 'Maximum of (0, 150, 30, 20, -8, -200) is : ' + Math.max(0, 150, 30, 20, -8, -200) + li_C;
             list_items += li_O + 'A Random number is : ' + Math.random() + li_C;
-            list_items += li_O +'Eulers number is:'+Math.E+ li_C;
-            list_items += li_O +'Logarithm of '+input+' is: '+Math.log(input)+ li_C;
+            list_items += li_O + 'Euler\'s number is: ' + Math.E + li_C;
+            list_items += li_O + 'Logarithm of ' + input + ' is: ' + Math.log(input) + li_C;
+            list_items += li_O + 'Exp(' + input + ') is : ' + Math.exp(input) + li_C;
+            list_items += li_O + 'Cube root of ' + input + ' is : ' + Math.cbrt(input) + li_C;
+            list_items += li_O + 'Sign of ' + input + ' is : ' + Math.sign(input) + li_C;
+            list_items += li_O + 'Trunc of ' + input + ' is : ' + Math.trunc(input) + li_C;
+            list_items += li_O + 'Fround of ' + input + ' is : ' + Math.fround(input) + li_C;
+            list_items += li_O + 'Hypotenuse of (3,4): ' + Math.hypot(3, 4) + li_C;
+            list_items += li_O + 'Log base 2 of ' + input + ' is : ' + Math.log2(input) + li_C;
+            list_items += li_O + 'Log base 10 of ' + input + ' is : ' + Math.log10(input) + li_C;
+
             document.getElementById('output_math').innerHTML = (list_items);
         }
     </script>
