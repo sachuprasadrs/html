@@ -1,112 +1,126 @@
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>String and Math functions</title>
-    <style>
-        div {
-            text-align: center;
-            border-bottom: 2px solid black;
-            padding-bottom: 2em;
-        }
-        h2 {
-            text-transform: uppercase;
-            text-align: center;
-            margin-top: 2em;
-            width: 100%;
-            padding: 5px;
-            color: #222324;
-            font-family: 'Courier New', Courier, monospace;
-            box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2), 0 4px 20px 0 rgba(0, 0, 0, 0.19);
-        }
-        table, tr, td, th {
-            padding: 1em;
-        }
-        table {
-            width: 100%;
-        }
-        th {
-            text-align: left;
-        }
-        .selector {
-            padding: .5em;
-            background-color: #002607;
-            color: white;
-            border: none;
-            outline: none;
-            border-radius: 5px;
-            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-            text-align: left;
-            margin-top: 5px;
-            padding: 10px;
-        }
-        ul {
-            background-color: #1a1b1c;
-            color: white;
-        }
-    </style>
-</head>
-<body>
-    <div>
-        <h2>String Functions</h2>
-        <table>
-            <tbody>
-                <tr>
-                    <th>Enter a text</th>
-                    <td><input type="text" id="input_srting" name="input_s"></td>
-                </tr>
-                <tr>
-                    <th>Search a text</th>
-                    <td><input type="text" id="input_search" name="input_search"></td>
-                </tr>
-                <tr>
-                    <th>Slice start</th>
-                    <td><input type="text" id="slice_s" name="slice_s"></td>
-                </tr>
-                <tr>
-                    <th>Slice end</th>
-                    <td><input type="text" id="slice_e" name="slice_e"></td>
-                </tr>
-                <tr>
-                    <th>Replace the word</th>
-                    <td><input type="text" id="replace_f"></td>
-                </tr>
-                <tr>
-                    <th>Replace with</th>
-                    <td><input type="text" id="replace_s"></td>
-                </tr>
-                <tr>
-                    <th>Merge element1</th>
-                    <td><input type="text" id="merge_1"></td>
-                </tr>
-                <tr>
-                    <th>Merge element2</th>
-                    <td><input type="text" id="merge_2"></td>
-                </tr>
-            </tbody>
-        </table>
-        <input type="button" value="Generate" class="selector" onclick="string_func()">
-        <br><br>
-        <ul id="output"></ul>
-    </div>
-    <div>
-        <h2>Math Functions</h2>
-        <table>
-            <tbody>
-                <tr>
-                    <th>Enter a Number</th>
-                    <td><input type="text" id="input_num"></td>
-                </tr>
-                <tr>
-                    <th>Power term</th>
-                    <td><input type="text" id="input_pow"></td>
-                </tr>
-            </tbody>
-        </table>
-        <input type="button" value="Generate" class="selector" onclick="math_func()">
-        <br><br>
-        <ul id="output_math"></ul>
-    </div>
+        <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width,
+                initial-scale=1.0">
+                <title>String and Math functions</title>
+                <style>
+                        div {
+                                text-align: center;
+                                border-bottom: 2px solid black;
+                                padding-bottom: 2em
+                                }
+                        h2 {
+                                text-transform: uppercase;
+                                text-align: center;             
+                                margin-top: 2em;
+                                width: 100%;
+                                padding: 5px;
+                                color: #222324;
+                                font-family: 'Courier New', Courier, monospace;
+                                box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2), 0 4px 20px 0 rgba(0, 0, 0, 0.19);
+                                }
+                        table,
+                        tr,
+                        td,
+                        th {
+                              padding: 1em;
+                                }
+                        table {
+                                width: 100%;
+                                  }               
+
+                        th {
+                              text-align: left;
+                                }
+
+                        .selector {
+                                padding: .5em;
+                                background-color: #002607;
+                                color: white;
+                                border: none;
+                                outline: none;
+                                border-radius: 5px;
+                                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida
+                                                     Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                                }
+
+                        li {
+                                text-align: left;
+                                margin-top: 5px;
+                                padding: 10px;
+                            }
+
+                       ul {
+                                background-color: #1a1b1c;
+                                color: white;
+                            }
+                </style>
+        </head>
+        <body>
+                <div>
+                        <h2>String Functions</h2>
+                        <table>
+		    <tbody>
+		        <tr>
+		            <th>Enter a text</th>
+		            <td><input type="text" id="input_srting" name="input_s"></td>
+		        </tr>
+		        <tr>
+		            <th>Search a text</th>
+		            <td><input type="text" id="input_search" name="input_search"></td>
+		        </tr>
+		        <tr>
+		            <th>Slice start</th>
+		            <td><input type="text" id="slice_s" name="slice_s"></td>
+		        </tr>
+		        <tr>
+		            <th>Slice end</th>
+		            <td><input type="text" id="slice_e" name="slice_e"></td>
+		        </tr>
+		        <tr>
+		            <th>Replace the word</th>
+		            <td><input type="text" id="replace_f"></td>
+		        </tr>
+		        <tr>
+		            <th>Replace with</th>
+		            <td><input type="text" id="replace_s"></td>
+		        </tr>
+		        <tr>
+		            <th>Merge element1</th>
+		            <td><input type="text" id="merge_1"></td>
+		        </tr>
+		        <tr>
+		            <th>Merge element2</th>
+		            <td><input type="text" id="merge_2"></td>
+		        </tr>
+		    </tbody>
+		</table>
+
+                        <input type="button" value="Generate" class="selector" onclick="string_func()">
+                        <br><br>
+                        <ul id="output"> </ul>
+                </div>
+
+                <div>
+                        <h2>Math Functions</h2>
+                        <table>
+                                <tbody>
+                                        <tr>    
+                                                <th>Enter a Number</th>
+                                                <td> <input type="text" id="input_num"></td>
+                                        </tr>
+                                        <tr>
+                                                <th>Power term</th>
+                                                <td> <input type="text" id="input_pow"></td>
+                                        </tr>
+                                </tbody>
+                        </table>
+
+                <input type="button" value="Generate" class="selector" onclick="math_func()">
+                <br><br>
+                <ul id="output_math"> </ul>
+        </div>
     <script>
         function string_func() {
             let input = document.getElementById('input_srting').value;
