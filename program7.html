@@ -61,9 +61,9 @@
 				<tr>
 					<td>Language Known</td>
 					<td colspan="2">
-						<input type="checkbox" name="english"/>English
-						<input type="checkbox" name="malayalam"/>Malayalam
-						<input type="checkbox" name="hindi"/>Hindi
+						<input type="checkbox" class="lang" name="english"/>English
+						<input type="checkbox" class="lang" name="malayalam"/>Malayalam
+						<input type="checkbox" class="lang" name="hindi"/>Hindi
 					</td>
 				</tr>
 				<tr>
@@ -107,6 +107,7 @@
 				var phno2 = document.form.phno2.value;
 				var addr1= document.form.addr1.value;
 				var addr2= document.form.addr2.value;
+				var lang=document.form.lang.value;
 				
 				var re = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
 				if (fname == "") {
@@ -132,16 +133,22 @@
 				if (security==""){
 					alert("Choose your security question");
 					document.form.security.focus();
+					return false;
 					}
 				if (ans==""){
 					alert("Answer your security question");
 					document.form.ans.focus();
+					return false;
 					}
 				if (email == "") {
 					alert("Enter Email !!");
 					document.form.email.focus();
 					return false;
 				}
+				if (lang==""){
+					alert("Select atleast one Language !!");
+					return false;
+				}					
 				if (phno1 != "" && isNaN(phno1)) {
 					alert("Enter valid Home Phone Number !!");
 					document.form.phno1.focus();
@@ -155,10 +162,12 @@
 				if (addr1==""){
 					alert("Enter home address !!!")
 					document.form.addr1.focus();
+					return false;
 				}
 				if (addr2==""){
 					alert("Enter office address !!!")
 					document.form.addr2.focus();
+					return false;
 				}
 			}
 		</script>
