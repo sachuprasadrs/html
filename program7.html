@@ -52,7 +52,7 @@
 				</tr>
 				<tr>
 					<td>Answer of Your Security Question</td>
-					<td colspan="2"><input type="text" id='ans' size="15"/></td>
+					<td colspan="2"><input type="text" name="ans" id='ans' size="15"/></td>
 				</tr>
 				<tr>
 					<td>Email Id</td>
@@ -81,8 +81,8 @@
 					<td>Temporary Address</td>
 				</tr>
 				<tr>
-					<td><input type="text" id="addr1" size="15"/></td>
-					<td><input type="text" id="addr2" size="15"/></td>
+					<td><input type="text" id="addr1" name="addr1" size="15"/></td>
+					<td><input type="text" id="addr2" name="addr2" size="15"/></td>
 				</tr>
 				<tr>
 					<td>Upload CV</td>
@@ -100,8 +100,13 @@
 				var age = document.form.age.value;
 				var password = document.form.b.value;
 				var rePassword = document.form.c.value;
+				var ans=document.form.ans.value;
 				var email = document.form.email.value;
 				var phno1 = document.form.phno1.value;
+				var phno2 = document.form.phno2.value;
+				var addr1= document.form.addr1.value;
+				var addr2= document.form.addr2.value;
+				
 				var re = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
 				if (fname == "") {
 					alert("Enter Name !!");
@@ -114,7 +119,7 @@
 					return false;
 				}
 				if (password == "" || !re.test(password)) {
-					alert("Enter valid Password !!" + '\n' + "Atleast one Lowercase &uppercase & digit & special character must be included.");
+					alert("Enter a valid Password !! Atleast one Lowercase &uppercase & digit & special character must be included.");
 					document.form.b.focus();
 					return false;
 				}
@@ -123,6 +128,10 @@
 					document.form.c.focus();
 					return false;
 				}
+				if (ans==""){
+					alert("Answer your security question");
+					document.form.ans.focus();
+					}
 				if (email == "") {
 					alert("Enter Email !!");
 					document.form.email.focus();
@@ -137,6 +146,14 @@
 					alert("Enter valid Office Phone Number !!");
 					document.form.phno2.focus();
 					return false;
+				}
+				if (addr1==""){
+					alert("Enter home address !!!")
+					document.form.addr1.focus();
+				}
+				if (addr2==""){
+					alert("Enter office address !!!")
+					document.form.addr2.focus();
 				}
 			}
 		</script>
