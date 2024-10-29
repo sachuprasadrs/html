@@ -90,7 +90,7 @@
 				</tr>
 				<tr>
 					<td><input type="reset" value="RESET"></td>
-					<td colspan="2"><input type="submit" value="SUBMIT"></td>
+					<td colspan="2"><input type="submit" value="SUBMIT" ></td>
 				</tr>
 			</table>
 		</form>
@@ -100,6 +100,7 @@
 				var age = document.form.age.value;
 				var password = document.form.b.value;
 				var rePassword = document.form.c.value;
+				var security=document.form.security.value;
 				var ans=document.form.ans.value;
 				var email = document.form.email.value;
 				var phno1 = document.form.phno1.value;
@@ -128,6 +129,10 @@
 					document.form.c.focus();
 					return false;
 				}
+				if (security==""){
+					alert("Choose your security question");
+					document.form.security.focus();
+					}
 				if (ans==""){
 					alert("Answer your security question");
 					document.form.ans.focus();
