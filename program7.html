@@ -1,111 +1,141 @@
-<html lang="en">
+<html>
 	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Form Validation</title>
+		<title>Registration form</title>
 	</head>
-	<style>
-		table{
-			background-color: white;
-			margin-left: auto;
-			margin-right: auto;
-			margin-top:1em;
-			padding:1em;
-			box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,0.19);
-		}
-		tr,td,th{
-			padding:1em;
-			text-align: left;
-		}
-		.center th{
-			text-align: center;
-		}
-		h2{
-			text-align: center;
-			margin-top: 2em;
-			background-color:black;
-			color: white;
-		}
-	</style>
 	<body>
-		<h2>FORM VALIDATION</h2>
 		<form name="form" action="" method="POST" onsubmit="return validateForm()">
-			<table>
+			<marquee bgcolor="#cccccc" loop="-1" scrollamount="2" width="100%">WELCOME TO FRESHERS WORLD</marquee>
+			<table border="4" cellpadding="2" cellspacing="2" bgcolor="#6A6C6D" width="100%">
 				<tr>
-					<th>Name</th>
-					<td><input type="text" name="fname"> </td>
+					<th colspan="3">Registration Form</th>
 				</tr>
 				<tr>
-					<th>Email </th>
-					<td><input type="email" name="email"> </td>
+					<td>Name</td>
+					<td colspan="2"><input type="text" id='a' name='a' size="15"/></td>
 				</tr>
 				<tr>
-					<th>Mob NO </th>
-					<td><input type="tel" name="mob"> </td>
+					<td>Age</td>
+					<td colspan="2">
+						<select id="age" name="age">
+							<option value="">Select Age</option>
+							<option value="18">18</option>
+							<option value="19">19</option>
+							<option value="20">20</option>
+							<option value="21">21</option>
+							<option value="22">22</option>
+							<option value="23">23</option>
+							<option value="24">24</option>
+							<option value="25">25</option>
+						</select>
+					</td>
 				</tr>
 				<tr>
-					<th>Username </th>
-					<td><input type="text" name="user"> </td>
+					<td>Password</td>
+					<td colspan="2"><input type="password" id="b" name='b' size="15"/></td>
 				</tr>
 				<tr>
-					<th>Password </th>
-					<td><input type="password" name="passcode"> </td>
+					<td>Re-enter Password</td>
+					<td colspan="2"><input type="password" id="c" name='c' size="15"/></td>
 				</tr>
-				<tr class="center">
-					<th colspan="2"><input type="submit" value="submit"></th>
+				<tr>
+					<td rowspan="4">Select your security question:</td>
+					<td colspan="2"><input type="radio" name="security" value="pet"/>What is your pet name</td>
+				</tr>
+				<tr>
+					<td colspan="2"><input type="radio" name="security" value="friend"/>Who is your best friend</td>
+				</tr>
+				<tr>
+					<td colspan="2"><input type="radio" name="security" value="color"/>What is your favourite color</td>
+				</tr>
+				<tr>
+					<td colspan="2"><input type="radio" name="security" value="teacher"/>Who is your favourite teacher</td>
+				</tr>
+				<tr>
+					<td>Answer of Your Security Question</td>
+					<td colspan="2"><input type="text" id='ans' size="15"/></td>
+				</tr>
+				<tr>
+					<td>Email Id</td>
+					<td colspan="2"><input type="email" id='email' size="15"/></td>
+				</tr>
+				<tr>
+					<td>Language Known</td>
+					<td colspan="2">
+						<input type="checkbox" name="english"/>English
+						<input type="checkbox" name="malayalam"/>Malayalam
+						<input type="checkbox" name="hindi"/>Hindi
+					</td>
+				</tr>
+				<tr>
+					<td rowspan="2">Phone Number</td>
+					<td>Home</td>
+					<td>Office</td>
+				</tr>
+				<tr>
+					<td><input type="text" id="phno1" size="15"/></td>
+					<td><input type="text" id="phno2" size="15"/></td>
+				</tr>
+				<tr>
+					<td rowspan="2">Address</td>
+					<td>Permanent Address</td>
+					<td>Temporary Address</td>
+				</tr>
+				<tr>
+					<td><input type="text" id="addr1" size="15"/></td>
+					<td><input type="text" id="addr2" size="15"/></td>
+				</tr>
+				<tr>
+					<td>Upload CV</td>
+					<td colspan="2"><input type="button" value="Choose an Image"></td>
+				</tr>
+				<tr>
+					<td><input type="reset" value="RESET"></td>
+					<td colspan="2"><input type="submit" value="SUBMIT"></td>
 				</tr>
 			</table>
 		</form>
 		<script>
 			function validateForm() {
-				var fname = document.form.fname.value;
+				var fname = document.form.a.value;
+				var age = document.form.age.value;
+				var password = document.form.b.value;
+				var rePassword = document.form.c.value;
 				var email = document.form.email.value;
-				var mob = document.form.mob.value;
-				var user = document.form.user.value;
-				var passcode = document.form.passcode.value;
+				var phno1 = document.form.phno1.value;
 				var re = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
-				var ren = /[0-9!@#$%^&*]/
-				var qw = /^(?=.*\d)(?=.*[a-z])(?=.*[@])(?=.*[gmail])(?=.*[.])(?=.*[com])/
 				if (fname == "") {
-					alert("Enter First Name !!");
-					document.form.fname.focus();
+					alert("Enter Name !!");
+					document.form.a.focus();
 					return false;
 				}
-				else if(ren.test(fname)){
-					alert("Enter Valid Name !!");
-					document.form.fname.focus();
+				if (age == "") {
+					alert("Select Age !!");
+					document.form.age.focus();
+					return false;
+				}
+				if (password == "" || !re.test(password)) {
+					alert("Enter valid Password !!" + '\n' + "Atleast one Lowercase &uppercase & digit & special character must be included.");
+					document.form.b.focus();
+					return false;
+				}
+				if (password !== rePassword) {
+					alert("Passwords do not match !!");
+					document.form.c.focus();
 					return false;
 				}
 				if (email == "") {
-					alert("Enter email!!");
+					alert("Enter Email !!");
 					document.form.email.focus();
 					return false;
 				}
-				else if(qw.test(email)){
-					alert("Enter Valid mail id !!");
-					document.form.email.focus();
+				if (phno1 != "" && isNaN(phno1)) {
+					alert("Enter valid Home Phone Number !!");
+					document.form.phno1.focus();
 					return false;
 				}
-				if (mob == "") {
-					alert("Enter Mobile number");
-					return false;
-				}
-				else if (isNaN(mob)) {
-					alert("Enter valid Mobile number");
-					return false;
-				}
-				else if (mob.length != 10) {
-					alert("Enter Mobile number with 10 digit");
-					return false;
-				}
-				if (user == "") {
-					alert("Enter User Name !!");
-					document.form.user.focus();
-					return false;
-				}
-				if (passcode == "" || passcode.length < 8 || !re.test(passcode)) {
-					alert("Enter minimum 8 digit Password !!" + '\n' + "Atleast one Lowercase &uppercase & digti & special charecter must be included");
-					document.form.passcode.focus();
+				if (phno2 != "" && isNaN(phno2)) {
+					alert("Enter valid Office Phone Number !!");
+					document.form.phno2.focus();
 					return false;
 				}
 			}
