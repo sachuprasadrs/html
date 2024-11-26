@@ -57,7 +57,7 @@
 			</table>
 		</form>
 		<?php
-		$con = Mysqli_Connect("localhost","root","","jobin");
+		$con = Mysqli_Connect("localhost","root","","sachu");
 		if(isset($_POST['submit'])){
 			$name = $_POST['fname'];
 			$email = $_POST['email'];
