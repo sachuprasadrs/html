@@ -95,7 +95,7 @@
 				echo "<script>alert('Your Password Must Contain At Least 1 Lowercase Letter!')</script>";
 			}
 			else{
-				$query = "insert into form values('$name','$email','$mobile','$password','$user')";
+				$query = "insert into form values('$name','$email','$mobile','$user','$password')";
 				if(mysqli_query($con,$query)){
 					echo "success";
 				}
