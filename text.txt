@@ -1,0 +1,23 @@
+To run XAMPP in the Ubuntu terminal, you can use the following commands:
+
+Start XAMPP: Open a terminal and navigate to the XAMPP installation directory, typically /opt/lampp. Then, use the following command to start all XAMPP services:
+sudo /opt/lampp/lampp start
+
+Alternatively, you can start XAMPP from the current directory if you are already in /opt/lampp:
+./lampp start
+
+Start Specific Components: If you want to start only specific components like Apache or MySQL, you can use:
+sudo /opt/lampp/lampp startapache
+sudo /opt/lampp/lampp startmysql
+
+Stop XAMPP: To stop all XAMPP services, use:
+sudo /opt/lampp/lampp stop
+
+Or from the current directory:
+./lampp stop
+
+Restart XAMPP: To restart all XAMPP services, use:
+sudo /opt/lampp/lampp restart
+
+Or from the current directory:
+./lampp restart
